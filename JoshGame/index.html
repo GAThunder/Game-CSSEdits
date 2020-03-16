@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+ <div class="canvas-holder" @mousemove="logCoordinates">
+    <!--Canvas calls each name uniquely, displays what resource type when clicked on, and its attributes when hovered over-->
+    <canvas v-for="item in items" class={item} v-bind:style="boxes[item]" @click="callName(item)" @mousemove="hover = true; hoverTile(item);" @mouseleave=" hover = false"></canvas>
+   
+    <span v-if="hover" id="divid" class="tileInfo" :style="{top: y + 'px', left: x +'px'}">
+                                        <ul>
+                                        <li>Tile Type: {{currentTile.tileType}}</li> 
+                                        <li>Soldiers: {{currentTile.soldiers}}</li>
+                                        <li>Scouts: {{currentTile.scouts}} </li>
+                                        <li>Workers: {{currentTile.workers}}</li>
+                                        <li>Events: {{currentTile.events}} </li>
+                                        </ul></span>
+
+<button @click="fillItems">CLICK ME</button>
+<p> {{currentInstruction}}  {{x}}/{{y}}</p>
+ </div>
+
+
+
+
+</div>
+</body>
+
+
+
+
+<script type="text/Javascript" src="script.js"></script>
+
+</html>

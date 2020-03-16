@@ -1,0 +1,37 @@
+canvas {
+    border: 2px solid;
+    padding:0px;
+    margin:1px;
+    cursor: pointer;
+}
+
+.canvas-holder{
+    max-width: 37.5em;
+    text-align:center;
+    margin: auto;
+}
+
+button {
+    background-color: slategray;
+    color: white;
+    margin: auto;
+    height: 3em;
+}
+
+canvas:hover .tileInfo {
+    visibility: visible;
+}
+
+.tileInfo {
+    position: fixed;
+    z-index: 1;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    height: 20em;
+    width: 15em;
+    text-align: left;
+}
+
+.tileInfo li {
+    list-style: none;
+}
